@@ -5,8 +5,6 @@ import solids;
 
 currentprojection=orthographic (
 camera=(8,5,4),
-up=(0,0,1),
-target=(2,2,2),
 zoom=0.5
 );
 

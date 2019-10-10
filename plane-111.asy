@@ -2,6 +2,9 @@ settings.outformat = "pdf";
 settings.render = 16;
 size(300);
 import solids;
+import graph3;
+import contour;
+import three;
 
 currentprojection=orthographic (
 camera=(8,5,4),
@@ -25,7 +28,6 @@ Label Lz = Label("$z$", position = EndPoint);
 draw((-0.1,0,0)--(1.5,0,0), arrow=Arrow3(), L=Lx);
 draw((0,-0.1,0)--(0,1.5,0), arrow=Arrow3(), L=Ly);
 draw((0,0,-0.1)--(0,0,1.5), arrow=Arrow3(), L=Lz);
-
 
 //%points on cube
 
@@ -52,6 +54,7 @@ Label L111 = Label("$(1,1,1)$", position=BeginPoint);
 // Creating pens for drawing
 pen backPen=gray(0.5)+dashed+1bp;
 pen frontPen=gray(0.1)+solid+1bp;
+pen patternPen=gray(0.3)+solid+1bp;
 
 // Drawing dots at the vertices of the cube.
 dot((0,0,0), red, L=L000);
@@ -72,6 +75,7 @@ draw(B--F,frontPen);
 draw(C--G,frontPen);
 draw(D--H,frontPen);
 
-// Here specify the initial point and final point of the arrow you wish to draw.
-draw((0,0,0)--(1,1,1), p=green+linewidth(2pt), arrow=Arrow3(TeXHead2));
-
+// Here specify the corners of the plane you wish to draw.
+pen planeopacity = opacity(0.67);
+path3 myplane = (0,0,1)--(1,0,0)--(0,1,0)--cycle;
+draw(surface(myplane), planeopacity);
