@@ -9,9 +9,6 @@ Label Ly = Label("$\sigma(MPa)$", position = EndPoint);
 Label L000 = Label("$o$", position = BeginPoint, align = 1W + 2S);
 // Label L000 = Label("$o$", (-0.2, -0.3));
 
-// Drawing the origin.
-dot((0,0), L = L000);
-
 // Drawing the 2-D coordinate axes.
 draw((-0.3, 0) -- (5, 0), arrow = Arrow(TeXHead), L = Lx);
 draw((0, -0.3) -- (0, 3.5), arrow = Arrow(TeXHead), L = Ly);
@@ -81,4 +78,5 @@ dot((1.45, 2.38), darkgreen);
 label("$A'$", (1.54, 2.38));
 label("$o'$", (0.15, -0.05));
 
-
+// Drawing the origin.
+dot((0,0), L = L000);
