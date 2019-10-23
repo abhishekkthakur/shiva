@@ -14,6 +14,7 @@ draw((-0.3, 0) -- (5, 0), arrow = Arrow(TeXHead), L = Lx);
 draw((0, -0.3) -- (0, 3.5), arrow = Arrow(TeXHead), L = Ly);
 
 // Drawing a line for representing a ductile material in the stress-strain curve.
+
 draw((0, 0) -- (1.25, 2.2){2.5, 2.75} .. (2.5, 2.75) .. (4.5, 2.3), blue);
 draw((4.5, 2.3), marker = Mark[6]);
 
