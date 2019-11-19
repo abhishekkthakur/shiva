@@ -17,13 +17,13 @@ itr = 0
 x1 = 0
 y1 = 0
 z1 = 0
-while (i < 200):
+while (i < 100):
     itr = itr + 1
     x2 = np.random.uniform(0, 10)
     y2 = np.random.uniform(0, 10)
     z2 = np.random.uniform(0, 10)
     dist = math.sqrt((z2 - z1)*(z2 - z1) + (y2 - y1)*(y2 - y1) + (x2 - x1)*(x2 - x1))
-    if (dist < 1):
+    if (dist < 2):
         i = i + 1
         series1_xvalues.append(x2)
         series1_yvalues.append(y2)
@@ -45,13 +45,13 @@ itr = 0
 x1 = 5
 y1 = 0
 z1 = 0
-while (i < 200):
+while (i < 100):
     itr = itr + 1
     x2 = np.random.uniform(0, 10)
     y2 = np.random.uniform(0, 10)
     z2 = np.random.uniform(0, 10)
     dist = math.sqrt((z2 - z1)*(z2 - z1) + (y2 - y1)*(y2 - y1) + (x2 - x1)*(x2 - x1))
-    if (dist < 1):
+    if (dist < 2):
         i = i + 1
         series2_xvalues.append(x2)
         series2_yvalues.append(y2)
@@ -73,13 +73,13 @@ itr = 0
 x1 = 10
 y1 = 0
 z1 = 0
-while (i < 200):
+while (i < 100):
     itr = itr + 1
     x2 = np.random.uniform(0, 10)
     y2 = np.random.uniform(0, 10)
     z2 = np.random.uniform(0, 10)
     dist = math.sqrt((z2 - z1)*(z2 - z1) + (y2 - y1)*(y2 - y1) + (x2 - x1)*(x2 - x1))
-    if (dist < 1):
+    if (dist < 2):
         i = i + 1
         series3_xvalues.append(x2)
         series3_yvalues.append(y2)
@@ -98,6 +98,9 @@ ax = fig.add_subplot(111, projection = '3d')
 ax.scatter(series1_xvalues, series1_yvalues, series1_zvalues, color = ['red'])
 ax.scatter(series2_xvalues, series2_yvalues, series2_zvalues, color = ['green'])
 ax.scatter(series3_xvalues, series3_yvalues, series3_zvalues, color = ['blue'])
+ax.plot(series1_xvalues, series1_yvalues, series1_zvalues, 'red', ls = '--')
+ax.plot(series2_xvalues, series2_yvalues, series2_zvalues, 'green', ls = '--')
+ax.plot(series3_xvalues, series3_yvalues, series3_zvalues, 'blue', ls = '--')
 plt.title('Random diffusion of atoms.')
 #plt.show()
-plt.savefig('random-3d.pdf', dpi = 600)
+plt.savefig('random-3d-dotted-line.png', dpi = 1200)
